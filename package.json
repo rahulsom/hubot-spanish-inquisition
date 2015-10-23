@@ -1,25 +1,23 @@
 {
   "name": "hubot-spanish-inquisition",
   "description": "Recites the words of Ximinez when it hears someone not expecting the spanish inquisition",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Rahul Somasunderam <rahul.som@gmail.com>",
   "license": "MIT",
-
-  "keywords": ["hubot","hubot-scripts"],
-
+  "keywords": [
+    "hubot",
+    "hubot-scripts"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/hubot-scripts/hubot-spanish-inquisition.git"
   },
-
   "bugs": {
     "url": "https://github.com/hubot-scripts/hubot-spanish-inquisition/issues"
   },
-
   "dependencies": {
     "coffee-script": "~1.6"
   },
-
   "devDependencies": {
     "mocha": "*",
     "chai": "*",
@@ -30,9 +28,7 @@
     "matchdep": "~0.1.2",
     "grunt-contrib-watch": "~0.5.3"
   },
-
   "main": "index.coffee",
-
   "scripts": {
     "test": "grunt test"
   }
