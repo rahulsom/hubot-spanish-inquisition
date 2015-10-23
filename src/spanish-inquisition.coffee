@@ -1,22 +1,43 @@
 # Description
 #   Recites the words of Ximinez when it hears someone not expecting the spanish inquisition
 #
-# Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
-#
 # Commands:
-#   hubot hello - <what the respond trigger does>
-#   orly - <what the hear trigger does>
-#
-# Notes:
-#   <optional notes required for the script>
+#   didn't expect.*spanish inquisition - Recites the words...
 #
 # Author:
-#   Rahul Somasunderam[@<org>]
+#   Rahul Somasunderam @rahulsom
 
 module.exports = (robot) ->
-  robot.respond /hello/, (msg) ->
-    msg.reply "hello!"
+  messages = [
+    'NOBODY expects the Spanish Inquisition!',
+    'Our chief weapon is surprise',
+    '...surprise and fear',
+    '...fear and surprise',
+    '.... Our two weapons are fear and surprise',
+    '...and ruthless efficiency',
+    '.... Our *three* weapons are fear, surprise, and ruthless efficiency',
+    '...and an almost fanatical devotion to the Pope',
+    '.... Our *four*',
+    '...no',
+    '... *Amongst* our weapons',
+    '.... Amongst our weaponry',
+    '...are such elements as fear, surprise',
+    '.... I\'ll come in again.',
+    'NOBODY expects the Spanish Inquisition! Amongst our weaponry are such diverse elements as: fear, surprise, ruthless efficiency, an almost fanatical devotion to the Pope',
+    '... and nice red uniforms',
+    '...Oh damn!'
+  ]
 
-  robot.hear /orly/, ->
-    msg.send "yarly"
+  withDelay = (ms, func) -> setTimeout func, ms
+  sendMessageWithDelay = (ms, str, msg) ->
+    withDelay ms, ->
+      msg.send str
+
+  startSending = (msg) ->
+    delay = 0
+    for phrase in messages
+      sendMessageWithDelay delay * 50, phrase, msg
+      delay += phrase.length
+
+  robot.hear /didn't expect.*spanish inquisition/i, startSending
+  robot.hear /not expect.*spanish inquisition/i, startSending
