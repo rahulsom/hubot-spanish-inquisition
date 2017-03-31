@@ -9,6 +9,7 @@
 
 module.exports = (robot) ->
   messages = [
+    'http://i.imgur.com/7jScCml.jpg',
     'NOBODY expects the Spanish Inquisition!',
     'Our chief weapon is surprise',
     '...surprise and fear',
