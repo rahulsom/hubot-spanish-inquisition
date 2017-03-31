@@ -1,7 +1,7 @@
 {
   "name": "hubot-spanish-inquisition",
   "description": "Recites the words of Ximinez when it hears someone not expecting the spanish inquisition",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Rahul Somasunderam <rahul.som@gmail.com>",
   "license": "MIT",
   "keywords": [
